@@ -39,8 +39,27 @@ def buscar_creditos() -> list:
     return ofertas   
 
 
+def escoger_oferta(buscarcredito) -> str:
+    
+    print ("Tus ofertas")
+    opc= 1
+    opc2=1
+    for i in buscarcredito:
+        opc += 1
+        if i=="credito_p" or i=="credito_m" or i=="credito_g":
+            print (str(dic1["creditos"][i])+"opcion " + str(opc))
+            
+    
+    opc = input("Que opcion elige?")
+    for i in buscarcredito:
+        if int(opc2) == int(opc):
+            print ("Su credito sera: " + str(dic1["creditos"][i]))
+    
+        opc2 += 1
+    return opc
+
 
 
 datos()  
-buscar_creditos()
-
+#buscar_creditos()
+escoger_oferta(buscar_creditos())
